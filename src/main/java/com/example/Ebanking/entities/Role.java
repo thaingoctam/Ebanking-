@@ -18,6 +18,7 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int roleID;
+    private String roleType;
 
     @OneToMany(mappedBy="role")
     private Set<Customer> customer;
@@ -35,6 +36,14 @@ public class Role {
         this.roleID = roleID;
     }
 
+    public String getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(String roleType) {
+        this.roleType = roleType;
+    }
+
     public Set<Customer> getCustomer() {
         return customer;
     }
@@ -50,6 +59,8 @@ public class Role {
     public void setUser(Set<User> user) {
         this.user = user;
     }
+
+
 
     
 }
